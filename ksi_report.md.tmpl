@@ -1,0 +1,55 @@
+# FedRAMP Continuous Monitoring KSI Report for {{.CSOName}}
+
+## KSI1 - Inventory Visibility Coverage Rate
+
+Our coverage rate this past month is: {{formatPercentage .KSI1.Coverage}}
+
+There are currently {{.KSI1.ComponentsInInventoryCount}} components in our inventory, out of which {{.KSI1.UnauthorizedComponentsInventoryCount}} are unauthorized.
+
+## KSI2 - Mean Time to Remediate Vulnerabilities
+
+Our mean time to remediate vulnerabilities over the past month is:
+
+ * Critical: {{.KSI2.MTTRCritical}} hours
+ * High: {{.KSI2.MTTRHigh}} hours
+ * Medium: {{.KSI2.MTTRMedium}} hours
+ * Low: {{.KSI2.MTTRLow}} hours
+
+## KSI3 - CISA KEV Findings
+
+We end the month with {{formatPercentage .KSI3.RemediatedOnTimePercentage}} of our CISA KEV findings remediated on time.
+
+We detected and remediated {{.KSI3.DetectedKEVCount}} CISA KEV findings and we end the month with {{.KSI3.LateKEVCount}} late KEV findings.
+
+## KSI4 - Secure Configuration Rate
+
+We end the month with {{formatPercentage .KSI4.SecureConfigurationPercentage}} of our unique component configurations conforming to hardening baselines.
+
+We have {{.KSI4.UniqueComponentConfigurationsCount}} secure configurations and {{.KSI4.UnapprovedConfigurationCount}} insecure configurations.
+
+## KSI5 - Mean Time to Investigate Alerts
+
+Over the last month, our mean time to investigate alerts is:
+
+ * Critical: {{.KSI5.MTTICritical}} hours
+ * High: {{.KSI5.MTTIHigh}} hours
+ * Medium: {{.KSI5.MTTIMedium}} hours
+ * Low: {{.KSI5.MTTILow}} hours
+
+## KSI6 - Privileged Access Compliance Rate
+
+We achieved a compliance rate of: {{formatPercentage .KSI6.PrivilegedAccessCompliancePercentage}} over the past month.
+
+## KSI7 - Cryptographic Module Compliance Rate
+
+We achieved a compliance rate of {{formatPercentage .KSI7.CryptographicModuleCompliancePercentage}} over the past month.
+
+## KSI8 - Agency Statutory Compliance Support
+
+| Feature | Status | Comments |
+| ------- | ------ | -------- |
+| IPv6 support | {{if .KSI8.IPv6Support}}✅{{else}}❌{{end}} | |
+| Customer configurable FIPS 140-2/3 compliance | {{if .KSI8.CustomerConfiguredFIPS140}}✅{{else}}❌{{end}} | |
+| Section 508 compliance | {{if .KSI8.Section508Compliance}}✅{{else}}❌{{end}} | |
+| Customer accessible CSP security logs | {{if .KSI8.CustomerAccessibleSecurityLogging}}✅{{else}}❌{{end}} | |
+| Customer configurable data retention policies | {{if .KSI8.CustomerConfigurableDataRetention}}✅{{else}}❌{{end}} | |

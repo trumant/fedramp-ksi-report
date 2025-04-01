@@ -1,0 +1,32 @@
+cso_name: "Example CSO"
+ksi1:
+  components_in_inventory_count: 1000
+  unauthorized_components_in_inventory_count: 100
+ksi2:
+  mttr_critical: 2
+  mttr_high: 4
+  mttr_medium: 8
+  mttr_low: 16
+ksi3:
+  detected_kev_count: 1000
+  late_kev_count: 100
+ksi4:
+  unique_component_configurations_count: 100
+  unapproved_configuration_count: 10
+ksi5:
+  mtti_critical: 2
+  mtti_high: 4
+  mtti_medium: 8
+  mtti_low: 16
+ksi6:
+  accounts_count: 100
+  mfa_accounts_count: 90
+ksi7:
+  encryption_implementation_count: 100
+  fips_encryption_implementation_count: 90
+ksi8:
+  ipv6_support: true
+  customer_configured_fips_140: false
+  section_508_compliance: true
+  customer_accessible_security_logging: true
+  customer_configurable_data_retention: true
