@@ -18,11 +18,9 @@ func main() {
 	ksiMetrics, err := internal.NewKSIMetrics(*name)
 	if err != nil {
 		fmt.Printf("Error reading input file: %v\n", err)
-		return
 	}
 	err = internal.RenderMarkdown(ksiMetrics, *template)
 	if err != nil {
 		fmt.Printf("Error templating report: %v\n", err)
-		return
 	}
 }
