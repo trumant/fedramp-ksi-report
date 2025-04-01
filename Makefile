@@ -1,8 +1,6 @@
-# BUILD_FLAGS=-X 'main.GitCommitHash=`git rev-parse --short HEAD`' -X 'main.BuiltAt=`date +%FT%T%z`'
-BUILD_FLAGS=-X 'main.BuiltAt=`date +%FT%T%z`'
 build:
-	@echo "  >  Building binary ..."
-	@go build -o fkr -ldflags="$(BUILD_FLAGS)" ./cmd/fedramp-ksi-report
+	@echo "  >  Building binaries ..."
+	@goreleaser build --snapshot --clean
 
 test:
 	@echo "  >  Validating code ..."
